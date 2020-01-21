@@ -7,6 +7,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 //configuration class는 spring-servlet.xml 포함하고 있는 정보를 대체해 줄 수있는 자바소스
 @Configuration // @Bean으로 된 하나 이상의 bean methods를 스프링 컨테이너에 의해 관리받는 곳
 @EnableWebMvc // mvc:annotation-driven in XML :@Controller anotation을 지원할 수 있게 해줌
@@ -15,6 +18,7 @@ public class AppConfig {
 
 	@Bean
 	public InternalResourceViewResolver resolver() {
+		log.info("=======InternalResourceViewResolver=======");
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setViewClass(JstlView.class);
 		resolver.setPrefix("/WEB-INF/views/");

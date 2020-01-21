@@ -8,6 +8,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import lombok.extern.slf4j.Slf4j;
+
+
+@Slf4j
 @Configuration // <tx:annotation-driven>
 @EnableTransactionManagement
 public class DBConfig {
@@ -15,6 +19,7 @@ public class DBConfig {
 	// 데이터소스 등록
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {
+		log.info("=======Database Connection=======");
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("org.mariadb.jdbc.Driver");
 		dataSource.setUrl("jdbc:mariadb://127.0.0.1:3306/test");
