@@ -13,6 +13,8 @@
 		<org.springframework-version>5.2.2.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<!-- maven-compile-plugin 방식 -->
+		<!-- <maven.compiler.source> 1.8 </maven.compiler.source> <maven.compiler.target> 1.8 </maven.compiler.target> -->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -114,6 +116,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.1</version>
 				<configuration>
+					<!-- java version -->
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
