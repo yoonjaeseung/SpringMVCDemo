@@ -21,7 +21,6 @@ public class LoginServiceImpl implements LoginService {
 
 	@Override
 	public UserVO getUser(String userID) {
-		// TODO Auto-generated method stub
 		return userMapper.getUser(userID);
 	}
 
@@ -29,7 +28,7 @@ public class LoginServiceImpl implements LoginService {
 	public void joinUser(UserVO user) {
 		// TODO Auto-generated method stub
 		userMapper.joinUser(user);
-		
+
 	}
-	
+
 }

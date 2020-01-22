@@ -10,7 +10,7 @@ import com.springmvc.demo.model.UserVO;
 public interface UserMapper {
 	List<UserVO> getUserlist();
 
-	UserVO getUser(String userId);
-
 	void joinUser(UserVO user);
+
+	UserVO getUser(String userID);
 }

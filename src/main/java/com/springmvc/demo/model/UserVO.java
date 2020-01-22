@@ -1,7 +1,6 @@
 package com.springmvc.demo.model;
 
 import lombok.Data;
-import lombok.NonNull;
 
 @Data
 public class UserVO {

@@ -10,11 +10,11 @@
 	<select id="getUser" resultType="UserVO">
 		select *
 		from user_tbl
-		where
-		userID = #{userID}
+		where userid = #{userID}
 	</select>
 
 	<insert id="joinUser">
-		insert into user_tbl ('userid', 'userpwd', 'name') values (#{userID},#{userPWD},#{name});
+		insert into user_tbl ('userid', 'userpwd', 'name') values
+		(#{userID},#{userPWD},#{name})
 	</insert>
 </mapper>
