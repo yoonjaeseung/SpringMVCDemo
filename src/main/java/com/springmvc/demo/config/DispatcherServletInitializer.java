@@ -1,7 +1,10 @@
 package com.springmvc.demo.config;
 
+import javax.servlet.Filter;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +18,7 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-		log.info("=======DataSourceTransactionManager=======");
+		log.info("=======getRootConfigClasses=======");
 		return new Class[] { AppConfig.class, DBConfig.class, MybatisConfig.class };
 
 	}
@@ -29,5 +32,15 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
 	@Override
 	protected String[] getServletMappings() {
 		return new String[] { "/" };
+	}
+
+	@Override
+	protected Filter[] getServletFilters() {
+
+		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+		characterEncodingFilter.setEncoding("UTF-8");
+
+		return new Filter[] { characterEncodingFilter };
+
 	}
 }

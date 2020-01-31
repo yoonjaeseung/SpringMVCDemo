@@ -17,14 +17,17 @@ import lombok.extern.slf4j.Slf4j;
 @MapperScan(basePackages = { "com.springmvc.demo.mapper" })
 public class MybatisConfig {
 
+//	@Autowired
+//	private ApplicationContext applicationContext;
+
 	@Bean
 	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
 		log.info("=======SqlSessionFactory=======");
 		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 		factoryBean.setDataSource(dataSource);
 		factoryBean.setTypeAliasesPackage("com.springmvc.demo.model");
-//		factoryBean.setConfigLocation(dbconfig.getResource("classpath:/mybatis/mybatis-config.xml"));
-//		factoryBean.setMapperLocations(dbconfig.getResources("classpath:/mybatis/mappers/*.xml"));
+//		factoryBean.setConfigLocation(applicationContext.getResource("classpath:/mybatis/mybatis-config.xml"));
+//		factoryBean.setMapperLocations(applicationContext.getResources("classpath:/mybatis/mappers/*.xml"));
 		return factoryBean.getObject();
 
 	}

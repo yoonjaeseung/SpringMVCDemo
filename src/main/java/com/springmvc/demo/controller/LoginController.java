@@ -27,11 +27,11 @@ public class LoginController {
 
 	@PostMapping("/login")
 	public String login(UserVO userVO, HttpSession session, Model model) throws Exception {
-		log.trace("=======LoginController=======");
+		log.info("=======LoginController=======");
 		System.out.println(userVO);
 		UserVO loginuser = service.getUser(userVO.getUserID());
 		System.out.println(loginuser);
-		log.trace("=======Login=======");
+		log.info("=======Login=======");
 
 		if (userVO.getUserPWD().equals(loginuser.getUserPWD())) {
 			// userVO userPWD와 loginuser userPWD가 동일할 경우

@@ -12,10 +12,25 @@
 	<logger name="org.springframework" level="info" additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
-
-	<logger name="com.springmvc.demo" level="trace" additivity="false">
+	<logger name="com.springmvc.demo" level="info" additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
+
+	<!-- mybatis query log setting -->
+
+<!-- 	<logger name="log4jdbc.log4j2" level="error" additivity="false"> -->
+<!-- 	<appender-ref ref="STDOUT" /> -->
+<!-- 	</logger> -->
+<!-- 	<include resource ="resource/log4jdbc.log4j2.properties" /> -->
+
+	<!-- log4jdbc-log4j2 -->
+	<logger name="jdbc" level="OFF" />
+	<logger name="jdbc.sqlonly" level="DEBUG" /> <!-- sql문 log -->
+	<logger name="jdbc.sqltiming" level="INFO" /> <!-- sql문과 sql 실행시키는데 수행된 시간정보 -->
+	<logger name="jdbc.audit" level="OFF" /> <!-- resultset을 제외한 jdbc 호출 정보 로그. 필요할 경우만 사용 -->
+	<logger name="jdbc.resultset" level="OFF" /> <!-- resultset을 포함한 jdbc 호출 정보. 양이 많음 -->
+	<logger name="jdbc.resultsettable" level="DEBUG" /> <!-- sql 결과가 조회된 데이터의 table을 로그로 남김 -->
+	<logger name="jdbc.connection" level="INFO" />
 
 	<root level="error">
 		<appender-ref ref="STDOUT" />
